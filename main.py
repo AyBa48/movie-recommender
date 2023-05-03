@@ -62,9 +62,10 @@ query = get_movie()
 def get_recommender(query):
 
     tr = rs.recommender_NMF(query,fit_model, q_matrix)
+    recom = random.sample(tr, 10)
     # print(tr[:])
     
-    return tr
+    return recom
     
     
 get_recommender(query)

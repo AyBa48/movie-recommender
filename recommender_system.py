@@ -144,7 +144,7 @@ class RecommenderSystem:
     
         return aics, bics, err_, n, b_comp
 
-    def recommender_NMF (self, query, model, q_matrix, k=5):
+    def recommender_NMF (self, query, model, q_matrix):
     
         """"
         Filter and recommends the top k movies for any given query 
@@ -201,7 +201,7 @@ class RecommenderSystem:
             if movie not in list(dict_.keys()):
                 recommendations.append(movie)
     
-        return recommendations[:k]
+        return recommendations
     
     
     

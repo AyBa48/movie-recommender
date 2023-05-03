@@ -17,12 +17,11 @@ p{
 
 body{
     text-align: center;
-    background-color:lavender;
     font-family:'Courier New', Courier, monospace;
-    background-image: url('beach.jpg');
+    background-image: url('image/beach.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+   
 }
 
 /* Changing the Style by accessing the class (define in recommender file -> class)
@@ -34,13 +33,13 @@ attribut tag */
 }
 
 .input-placeholder:hover {
-    background-color:blue;
+    background-color:bisque;
     box-shadow:10px 10px 16px;
 }
   
-/*#logo {
+#logo {
     border-radius:400px;
-}*/
+}
 
 #logo:hover {
     background-color:white;
@@ -48,7 +47,7 @@ attribut tag */
 }
 
 form {
-    color: white
+    color: darkblue
 }
 
 

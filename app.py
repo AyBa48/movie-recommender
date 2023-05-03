@@ -35,7 +35,7 @@ def recommender():
     query = []
     for key in user_input_data:
         value= user_input_data[key]
-        if value >= 3:
+        if int(value) >= 3:
             query.append(key)
     
     movie = get_recommender(query)
