@@ -74,75 +74,7 @@ class RecommenderSystem:
         
         return feature_user, feature_user_fill, q_matrix
         
-    
-    def optimal_component(self, matrix, n):
-        """
-        Estimate the best number of components to construct NMF
-        """
-        # Load data and preprocess
-        X = matrix # movie_user_fill ## np.loadtxt('data.txt')
-
-        # Set range of number of components to evaluate
-        n_components_range = range(1, n)
-
-        # Initialize list to store AIC and BIC values
-        aics = []
-        bics = []
-        err_ = []
-        timer = 0
-        n=1000
-
-        # Loop over number of components
-        for n_components in n_components_range:
-            start_time = time.time()
-        
-            # Fit NMF model on training data
-            nmf = NMF(n_components=n_components, init= 'random', random_state=42)
-            W_train = nmf.fit_transform(X)
-            H_train = nmf.components_
-        
-            # Compute reconstruction error on validation data
-            X_val_reconstructed = np.dot(W_train, H_train)
-         
-       
-            # summe of elt wise reconstruction error
-            err1_= nmf.reconstruction_err_
-        
-            #print (f"--{rec}---{err1_}")
-        
-        
-            # compute log likehood
-            log_likelihood = np.sum(X * np.log(np.maximum(X_val_reconstructed, np.finfo(float).eps) - X_val_reconstructed))
-        
-            # Compute AIC and BIC 
-            k = n_components * (X.shape[1] + X.shape[0])
-            aic = -2*log_likelihood + 2 * k
-            bic = -2*log_likelihood + np.log(X.size) * k
-        
-        
-            # Append AIC, BIC and reconstruction error values to list
-            aics.append(aic)
-            bics.append(bic)
-            err_.append(err1_)
-        
-            end_time = time.time()
-            duration = end_time - start_time
-        
-        print(f"Iteration number:------- {n_components} ---- finish in : {round(duration, 3)} seconds")        
-        timer +=duration
-        
-        #update error for minimum 
-        
-        if err1_ < n:
-            n = err1_
-            # best component for minimum error
-            b_comp=n_components
-                  
-        
-        timer = timer/60
-        print (f"Time total of program execution : {round(timer, 3)} min")
-    
-        return aics, bics, err_, n, b_comp
+          
 
     def recommender_NMF (self, query, model, q_matrix):
     
