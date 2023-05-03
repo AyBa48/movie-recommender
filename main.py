@@ -43,7 +43,7 @@ with open ('factorize_model.pkl', 'rb') as file_:
 def get_movie():
     # query for NMF recommendation
     movie = list(user_movie.columns)
-    query = random.sample(movie, 5)
+    query = random.sample(movie, 3)
     
     return query
     
