@@ -1,0 +1,55 @@
+/* This is how to make comment */
+/* General syntax of CSS (Cascading Style Sheet) */
+
+
+/*selector {
+    property:value;
+    another_property:another:value
+*/
+
+h1{
+    color:red
+}
+
+p{
+    color:tomato
+}
+
+body{
+    text-align: center;
+    background-color:lavender;
+    font-family:'Courier New', Courier, monospace;
+    background-image: url('beach.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Changing the Style by accessing the class (define in recommender file -> class)
+attribut tag */
+
+.input-placeholder {
+    max-width:200px;
+    background-color:bisque;
+}
+
+.input-placeholder:hover {
+    background-color:blue;
+    box-shadow:10px 10px 16px;
+}
+  
+/*#logo {
+    border-radius:400px;
+}*/
+
+#logo:hover {
+    background-color:white;
+    box-shadow:10px 10px 16px;
+}
+
+form {
+    color: white
+}
+
+
+

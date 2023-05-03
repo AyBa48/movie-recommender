@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+  <link rel="stylesheet" href="../static/stylesheet.css">
+  <title>Movie Recommender</title>
+</head>
+
+<body>
+  <h1>{{ title }}</h1>
+  <img id="logo" src="~/movie.jpg" width="500" height="500">
+  <img src="image/beach.jpg" id="background image">
+  <br>  
+  <a href="https://www.lyrics.com">Go to the lyrics site!</a>
+  <p>Please rate the following movies on a scale from 0.0 to 5.0:</p>
+  <form action="/recommender">
+  {%for title in movie_dict %}
+  
+    <label for="rating">{{ title }}</label>
+    <input type="number" class="input-placeholder"  name="{{ name }} "min="0" max="5" placeholder="0.0 - 5.0"><br>
+  {% endfor %}
+  <input type="submit" value = "Submit">
+  </form>
+  <p>You can see our recommendation based on your rating<a href="/recommender"> here </a>
+  </p>
+
+</body>
+
+</html>
