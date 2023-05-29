@@ -68,15 +68,18 @@ def get_recommender(query):
     return recom
     
     
-get_recommender(query)
+#get_recommender(query)
 
 #for it in tr:
 #    print(it)
 #print (len(tr))
 
 # cosine similarity recommendation 
-#print('This the cosine similarty movies')
-#rs.recommander_cos_similarity(40, user_movie, 4)
+print('This the cosine similarty movies')
+recomend = rs.recommander_cos_similarity(40, user_movie, 4)
+for data in recomend:
+    print(data)
+
 
 
 

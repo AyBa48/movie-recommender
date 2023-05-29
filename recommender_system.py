@@ -212,7 +212,7 @@ class RecommenderSystem:
      
                 # print recommendation of movie if ratings is higher than a value 
                 if ratings > expect_rate:
-                    print(movie, round(ratings, 2))
+                    #print(movie, round(ratings, 2))
                 
                     dict_= {'movie':movie, 'rating':round(ratings,1)}
                     dict_2.append(dict_)
