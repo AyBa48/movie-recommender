@@ -153,7 +153,7 @@ dmypy.json
 cython_debug/
 
 
-# presentation
+# jupyter presentation
 Ligth_talk.ipynb
 
 # PyCharm
