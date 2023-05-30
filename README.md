@@ -1,5 +1,7 @@
 # movie-recommender
 
+![](/screen.png)
+
 
 #### - make recommendation based on user rating 
 #### - return list of movie 
